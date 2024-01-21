@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">	
+    <title>vivy-fluorite-eye's-song</title>
+    <link rel="icon" href="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128546-UIwyhuhjxmL0.jpg" type="jpg">
+    <style>
+    * {
+        margin: 0; padding: 0;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        font-weight: normal;
+        font-family: 'Quicksand', sans-serif;
+
+    }
+body {
+    background: #0f0f0f;
+    font-family: 'Quicksand', sans-serif;
+}
+.heading {
+    color: #728197;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;  
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+
+}
+.container .main-video {
+    background: #1a1a1a;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.container .main-video video {
+    width: 100%;
+    border-radius: 5px;
+}
+.container .main-video  .title {
+    background: rgb(33 33 33);
+    color: rgb(255, 250, 250);
+    font-size: 23px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.container .video-list {
+    background: rgb(33 33 33);
+    border-radius: 5px;
+    height: 520px;
+    overflow-y: scroll;
+
+}
+
+.container .video-list::-webkit-scrollbar {
+    width: 7px;
+}
+.container .video-list::-webkit-scrollbar-track {
+    background: #ccc;
+    border-radius: 50px; 
+}
+.container .video-list::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 50px; 
+}
+
+
+
+.container .video-list .vid video {
+    width: 100px;
+    border-radius: 5px;
+
+}
+
+.container .video-list .vid {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0,0,0,.1);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    cursor: pointer;
+}
+.container .video-list .vid:hover{
+    background: rgb(39 39 39);
+}
+
+
+
+.container .video-list .vid.active{
+    background: rgb(26 35 49);
+
+}
+.container .video-list .vid.active .title{
+   color: #fff;
+}
+.container .video-list .vid .title{
+   color: hsla(0,0%,100%,.5);
+   font-size: 17px;
+}
+@media (max-width:991px){   
+    .container {
+    grid-template-columns: 1.5fr 1fr;
+    padding: 10px;
+}
+}
+@media (max-width:768px){
+    .container {
+    grid-template-columns: 1fr;
+}
+}
+#myVideo {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+button {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555555; 
+  color: white;
+}
+
+#timeline {
+    display: none; /* Hide timeline */
+}
+
+/* ------------------------------------------------hieu-ung-chuyen-dong-luot-len-luot-xuong---------------------------------------------------------------------- */
+
+.container, .video-list, .heading {
+    /* Thời gian chuyển đổi */
+    transition: all 0.5s ease-in-out;
+}
+
+.container:hover, .video-list:hover, .heading:hover {
+    /* Hiệu ứng lướt lên */
+    transform: translateY(-10px);
+}
+
+.container:active, .video-list:active, .heading:active {
+    /* Hiệu ứng lướt xuống */
+    transform: translateY(10px);
+}
+/* _____________________________________________________________________________________________________________________________ */
+
+    </style>
+</head>
+<body>
+    <h3 class="heading">vivy-fluorite-eye's-song</h3>
+    <div class="container">
+        <div class="main-video">
+            <div class="video">
+                <video id="myVideo"  controls muted autoplay playsinline poster="https://s199.imacdn.com/vg/2021/04/04/7475356984476ed0_c8e1f748c7f987e8_3000916175189531118684.jpg" src="https://content.jwplatform.com/videos/h8U7vc3S-1920.mp4">
+                    <source src="
+                    " size="720">
+                        <source src=""
+                    size="1080">
+                </video>
+<input id="timeline" type="range" min="0" max="100" value="0">
+                <div class="title">Tập 1 - My Code – Khiến mọi người hạnh phúc</div>
+            </div>
+        </div>
+
+    <!-- phan list video -->
+    <div class="video-list">
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/h8U7vc3S-1920.mp4" poster="https://s199.imacdn.com/vg/2021/04/04/7475356984476ed0_c8e1f748c7f987e8_3000916175189531118684.jpg"></video>
+            <h3 class="title">Tập 1 - My Code – Khiến mọi người hạnh phúc</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/YvVkMaFk-1920.mp4" poster="https://s199.imacdn.com/vg/2021/04/11/0aa0b8296cb29cba_fbe88f05a3a44fc3_17146161812541753.jpg"></video>
+            <h3 class="title">Tập 2 - Quarter Note – Sự khởi đầu của chuyến hành trình trăm năm</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/yxiFPyPs-1920.mp4" poster="https://s199.imacdn.com/vg/2021/04/11/1c09fb9aeef67e0e_746e71e6be7b1be0_34257161812540353.jpg"></video>
+            <h3 class="title">Tập 3 - A Tender Moon Tempo - Cuộc trò chuyện dễ chịu cùng những vì tinh tú</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/h3INVqI9-1920.mp4" poster="https://s199.imacdn.com/vg/2021/04/18/5e5040f7227fed75_e52a12042f0ec063_2941616187252039118684.jpg"></video>
+            <h3 class="title">Tập 4 -  Ensemble for Polaris - Lời hứa của chúng ta</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/c4sjIy5K-1920.mp4" poster="https://s199.imacdn.com/vg/2021/04/25/1698c9f2eb009818_3d8c83db01881e2f_22234161935934883.jpg"></video>
+            <h3 class="title">Tập 5 - Sing My Pleasure - Để khiến bạn mỉm cười</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/g69h1w7R-1920.mp4" poster="https://s199.imacdn.com/vg/2021/05/02/bdf0b1406808bd30_039fd948d7f929df_23443161994635113.jpg"></video>
+            <h3 class="title">Tập 6 - Sing My Pleasure - Em yêu anh</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/yyi0rTz3-1920.mp4" poster="https://s199.imacdn.com/vg/2021/05/10/f29c2986920e2ffe_59ff715932d670d4_21076162063490093.jpg"></video>
+            <h3 class="title">Tập 7 - Galaxy Anthem - Khiến mọi người hạnh phúc qua những bản ca</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/6vFJGowa-1920.mp4" poster="https://s199.imacdn.com/vg/2021/05/17/f37d0f0e93a3b049_d346f66c0c22f2d4_25663162123634789674.jpg"></video>
+            <h3 class="title">Tập 8 - Elegy Dedicated With Love - Cộng sự quý giá duy nhất</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/C2sX7TnG-1920.mp4" poster="https://s199.imacdn.com/vg/2021/05/24/f4b06c753304bd54_40d1d73989d081c9_21318162184393543.jpg"></video>
+            <h3 class="title">Tập 9 - Harmony of One's Hear - Sứ mệnh của tôi, tương lai của bạn</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/2d503KDz-1920.mp4" poster="https://s199.imacdn.com/vg/2021/05/30/b4e6785b69ebac81_b1948b86969c1575_19860162238478193.jpg"></video>
+            <h3 class="title">Tập 10 - Vivy Score - Hát bằng cả trái tim</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/tWThVTah-1920.mp4" poster="https://s199.imacdn.com/vg/2021/06/06/80ef26656279b990_9b56b2024123ef5f_21413162296487343.jpg"></video>
+            <h3 class="title">Tập 11 - World's End Modulation - Ngày 11 tháng 4 năm 2161</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/dH8EGIws-1920.mp4" poster="https://s199.imacdn.com/vg/2021/06/14/7b8b5902ebb4fa4e_7fb1ffd3178286d2_19216162365920663.jpg"></video>
+            <h3 class="title">Tập 12 - Refrain - Sứ mệnh của tôi</h3>
+            </div>
+            <div class="vid active">
+                <video src="https://content.jwplatform.com/videos/SCaGBA9L-1920.mp4" poster="https://s199.imacdn.com/vg/2021/06/20/aa8d3bc026814630_b7fa663c038beb15_28443162417266759674.jpg"></video>
+            <h3 class="title">Tập 13 - Fluorite Eye's Song</h3>
+            </div>
+    </div>
+    
+
+</div>
+
+
+<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+      <script>
+var vid = document.getElementById("myVideo");
+var playPauseBtn = document.getElementById("playPauseBtn");
+var timeline = document.getElementById("timeline");
+
+vid.ontimeupdate = function() {updateTimeline()};
+
+function playPauseVid() { 
+    if (vid.paused) {
+        vid.play();
+        playPauseBtn.innerHTML = "Pause";
+    } else {
+        vid.pause();
+        playPauseBtn.innerHTML = "Play";
+    }
+} 
+
+function increaseVol() {
+    if(vid.volume < 1) vid.volume += 0.1;
+}
+
+function decreaseVol() {
+    if(vid.volume > 0) vid.volume -= 0.1;
+}
+
+function toggleFullscreen() {
+    if (vid.requestFullscreen) {
+        vid.requestFullscreen();
+    } else if (vid.mozRequestFullScreen) { /* Firefox */
+        vid.mozRequestFullScreen();
+    } else if (vid.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        vid.webkitRequestFullscreen();
+    } else if (vid.msRequestFullscreen) { /* IE/Edge */
+        vid.msRequestFullscreen();
+    }
+}
+
+function updateTimeline() {
+    var value = (100 / vid.duration) * vid.currentTime;
+    timeline.value = value;
+}
+
+timeline.oninput = function() {
+    var currentTime = this.value * vid.duration / 100;
+    vid.currentTime = currentTime;
+}
+
+const player = new Plyr('#myVideo', {
+    quality: { default: '1080', options: ['1080', '720'] }
+});
+
+
+
+let listVideo = document.querySelectorAll('.video-list .vid');
+let mainVideo = document.querySelector('.main-video video');
+let title   = document.querySelector('.main-video .title');
+    
+listVideo.forEach(video =>{
+    video.onclick = () => {
+        listVideo.forEach(vid => vid.classList.remove('active'));
+        video.classList.add('active');
+        if(video.classList.contains('active')){
+            let src = video.children[0].getAttribute('src');
+            let poster = video.children[0].getAttribute('poster'); // Lấy đường dẫn poster
+            mainVideo.src = src;
+            mainVideo.poster = poster; // Đặt thuộc tính poster của video chính
+            let text = video.children[1].innerHTML;
+            title.innerHTML = text;
+        };
+    };
+});
+// -----------------------------------------------------su-kien-ghi-nho-video----------------------------------------------------------------------------------------------------
+
+
+
+// Khi một video được chọn
+document.querySelectorAll('.vid').forEach(function(vid) {
+    vid.addEventListener('click', function() {
+        // Lưu trữ URL video và tiêu đề vào localStorage
+        var videoUrl = this.querySelector('video').getAttribute('src');
+        var title = this.querySelector('.title').textContent;
+        localStorage.setItem('lastSelectedVideo', JSON.stringify({url: videoUrl, title: title}));
+    });
+});
+
+// Khi tải lại trang web
+window.addEventListener('DOMContentLoaded', function() {
+    var lastSelectedVideo = JSON.parse(localStorage.getItem('lastSelectedVideo'));
+    if (lastSelectedVideo) {
+        // Tìm video tương ứng và đặt nó thành video được chọn
+        document.querySelectorAll('.vid').forEach(function(vid) {
+            var videoUrl = vid.querySelector('video').getAttribute('src');
+            if (videoUrl === lastSelectedVideo.url) {
+                vid.classList.add('active');
+                // Cập nhật tiêu đề
+                document.querySelector('.title').textContent = lastSelectedVideo.title;
+                // Kích hoạt sự kiện click chuột
+                vid.click();
+            } else {
+                vid.classList.remove('active');
+            }
+        });
+    }
+});
+
+
+
+//--------------------------------------------------phan ghi nho thoi gian video-----------------------------------------------------------------------
+
+// Lấy tham chiếu đến video
+var video = document.getElementById('myVideo');
+
+// Khi video được tải, kiểm tra xem có thời điểm xem cuối cùng không
+video.addEventListener('loadedmetadata', function() {
+    var lastWatchedTime = localStorage.getItem('lastWatchedTime');
+    if (lastWatchedTime) {
+        video.currentTime = lastWatchedTime;
+    }
+});
+
+// Khi video bị tạm dừng (ví dụ: khi người xem đóng trang web)
+video.addEventListener('pause', function() {
+    localStorage.setItem('lastWatchedTime', video.currentTime);
+});
+//---------------------------------------------------------end----------------------- ---------------------------------------------------------
+
+
+    </script>
+</body>
+</html>
